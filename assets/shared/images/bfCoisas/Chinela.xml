@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Chinela.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="anim0000" x="0" y="215" width="165" height="97" frameX="-309" frameY="-19" frameWidth="500" frameHeight="256"/>
+	<SubTexture name="anim0001" x="0" y="0" width="255" height="121" frameX="-106" frameY="-66" frameWidth="500" frameHeight="256"/>
+	<SubTexture name="anim0002" x="0" y="121" width="179" height="94" frameX="2" frameY="-151" frameWidth="500" frameHeight="256"/>
+	<SubTexture name="anim0003" x="255" y="0" width="164" height="99" frameX="-10" frameY="-146" frameWidth="500" frameHeight="256"/>
+	<SubTexture name="anim0004" x="0" y="215" width="165" height="97" frameX="-10" frameY="-147" frameWidth="500" frameHeight="256"/>
+</TextureAtlas>

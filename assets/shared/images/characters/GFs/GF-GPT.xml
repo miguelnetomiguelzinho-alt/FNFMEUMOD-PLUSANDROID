@@ -1,0 +1,22 @@
+<TextureAtlas imagePath="sprite_gf_sheet.png">
+	<!-- idle (16 frames: fila por fila, esquerda->direita, topo->baixo) -->
+	<SubTexture name="idle0" x="0" y="0" width="420" height="720"/>
+	<SubTexture name="idle1" x="420" y="0" width="420" height="720"/>
+	<SubTexture name="idle2" x="840" y="0" width="420" height="720"/>
+	<SubTexture name="idle3" x="1260" y="0" width="420" height="720"/>
+
+	<SubTexture name="idle4" x="0" y="720" width="420" height="720"/>
+	<SubTexture name="idle5" x="420" y="720" width="420" height="720"/>
+	<SubTexture name="idle6" x="840" y="720" width="420" height="720"/>
+	<SubTexture name="idle7" x="1260" y="720" width="420" height="720"/>
+
+	<SubTexture name="idle8" x="0" y="1440" width="420" height="720"/>
+	<SubTexture name="idle9" x="420" y="1440" width="420" height="720"/>
+	<SubTexture name="idle10" x="840" y="1440" width="420" height="720"/>
+	<SubTexture name="idle11" x="1260" y="1440" width="420" height="720"/>
+
+	<SubTexture name="idle12" x="0" y="2160" width="420" height="720"/>
+	<SubTexture name="idle13" x="420" y="2160" width="420" height="720"/>
+	<SubTexture name="idle14" x="840" y="2160" width="420" height="720"/>
+	<SubTexture name="idle15" x="1260" y="2160" width="420" height="720"/>
+</TextureAtlas>

@@ -1,0 +1,79 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				163,
+				-347
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				-17,
+				-336
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				215,
+				-405
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				-54,
+				-315
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-80,
+				-380
+			],
+			"loop_point": 0,
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/cbolinha rapperfrente",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "Cbolinha rapper",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		175,
+		0
+	],
+	"camera_position": [
+		-190,
+		410
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

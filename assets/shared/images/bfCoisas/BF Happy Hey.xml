@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF Happy Hey.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="HEY0000" x="0" y="0" width="446" height="651" frameX="-179" frameY="-148" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="HEY0001" x="446" y="0" width="457" height="634" frameX="-169" frameY="-164" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="HEY0002" x="903" y="0" width="450" height="636" frameX="-173" frameY="-162" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="logoBumpin.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="logo bumpin0000" x="0" y="0" width="723" height="487" frameX="-267" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="logo bumpin0001" x="723" y="0" width="667" height="449" frameX="-295" frameY="-121" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="logo bumpin0002" x="0" y="900" width="589" height="397" frameX="-334" frameY="-147" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="logo bumpin0003" x="613" y="487" width="601" height="405" frameX="-328" frameY="-143" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="logo bumpin0004" x="0" y="487" width="613" height="413" frameX="-322" frameY="-139" frameWidth="1280" frameHeight="720"/>
+</TextureAtlas>

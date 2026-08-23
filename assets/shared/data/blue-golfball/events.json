@@ -1,0 +1,65 @@
+{
+	"events": [
+		[
+			18000,
+			[
+				["Trigger", "renderin", ""]
+			]
+		],
+		[
+			22000,
+			[
+				["Trigger", "renderout", ""]
+			]
+		],
+		[
+			26000,
+			[
+				["Trigger", "renderout2", ""]
+			]
+		],
+		[
+			49875,
+			[
+				["Change Scroll Speed", "4", "3"]
+			]
+		],
+		[
+			50000,
+			[
+				["Hide_HealthBar", "", ""]
+			]
+		],
+		[
+			57680,
+			[
+				["Cinematics", "1", ""]
+			]
+		],
+		[
+			62900,
+			[
+				["Change Scroll Speed", "1", "1"]
+			]
+		],
+		[
+			66140,
+			[
+				["Cinematics", "", "2"]
+			]
+		],
+		[
+			74195,
+			[
+				["Hud Fade", "", ""]
+			]
+		],
+		[
+			74320,
+			[
+				["Set Property", "camGame.alpha", "0"]
+			]
+		]
+	],
+	"format": "psych_v1"
+}

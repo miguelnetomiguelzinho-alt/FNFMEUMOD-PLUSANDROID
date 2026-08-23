@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [-115, -226],
+			"anim": "singRIGHT",
+			"fps": 19,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-103, -236],
+			"anim": "singLEFT",
+			"fps": 19,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-108, -235],
+			"anim": "singUP",
+			"fps": 19,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-211, -221],
+			"anim": "idle",
+			"fps": 3,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-73, -271],
+			"anim": "singDOWN",
+			"fps": 16,
+			"name": "down",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/stealer_noob",
+	"position": [-760, -470],
+	"healthicon": "face",
+	"flip_x": false,
+	"healthbar_colors": [161, 161, 161],
+	"camera_position": [-40, 140],
+	"sing_duration": 6.1,
+	"scale": 1.1,
+	"_editor_isPlayer": false
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF (Soco No Espelho).png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="socando0000" x="1689" y="637" width="467" height="625" frameX="-392" frameY="-46" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0001" x="1173" y="649" width="497" height="625" frameX="-401" frameY="-46" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0002" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0003" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0004" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0005" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0006" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0007" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0008" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0009" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0010" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0011" x="636" y="649" width="493" height="626" frameX="-400" frameY="-45" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0012" x="1689" y="0" width="471" height="637" frameX="-380" frameY="-34" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0013" x="1173" y="0" width="516" height="649" frameX="-285" frameY="-21" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0014" x="0" y="0" width="636" height="631" frameX="-154" frameY="-40" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0015" x="0" y="631" width="546" height="645" frameX="-253" frameY="-26" frameWidth="1200" frameHeight="768"/>
+	<SubTexture name="socando0016" x="636" y="0" width="537" height="649" frameX="-264" frameY="-21" frameWidth="1200" frameHeight="768"/>
+</TextureAtlas>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="GF Back View.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="456" y="651" width="450" height="640" frameX="-144" frameY="-187" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0001" x="0" y="651" width="456" height="647" frameX="-139" frameY="-180" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0002" x="458" y="0" width="459" height="648" frameX="-139" frameY="-178" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0003" x="0" y="0" width="458" height="651" frameX="-140" frameY="-175" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0004" x="917" y="0" width="458" height="647" frameX="-140" frameY="-179" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

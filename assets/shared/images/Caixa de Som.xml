@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Caixa de Som.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="bump0000" x="0" y="0" width="338" height="312" frameX="-178" frameY="-247" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="bump0001" x="338" y="0" width="333" height="310" frameX="-178" frameY="-249" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="bump0002" x="0" y="312" width="334" height="309" frameX="-178" frameY="-250" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="idle0000" x="0" y="312" width="334" height="309" frameX="-178" frameY="-250" frameWidth="768" frameHeight="768"/>
+</TextureAtlas>

@@ -1,0 +1,36 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 16,
+			"anim": "idle",
+			"loop": true,
+			"name": "idle"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/Dancing Rat",
+	"position": [
+		40,
+		230
+	],
+	"healthicon": "rat",
+	"flip_x": false,
+	"healthbar_colors": [
+		107,
+		107,
+		107
+	],
+	"camera_position": [
+		-190,
+		10
+	],
+	"sing_duration": 4,
+	"scale": 1.1,
+	"_editor_isPlayer": false
+}

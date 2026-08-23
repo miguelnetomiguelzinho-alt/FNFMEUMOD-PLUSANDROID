@@ -1,0 +1,36 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-3,
+				0
+			],
+			"indices": [],
+			"fps": 16,
+			"anim": "idle",
+			"loop": false,
+			"name": "idle"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/objetos/Enxada",
+	"position": [
+		-170,
+		-70
+	],
+	"healthicon": "enxada",
+	"flip_x": false,
+	"healthbar_colors": [
+		69,
+		69,
+		67
+	],
+	"camera_position": [
+		-90,
+		90
+	],
+	"sing_duration": 3,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF Microondas.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="abrindo0000" x="0" y="3860" width="804" height="641" frameX="-101" frameY="-6" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="abrindo0001" x="0" y="3217" width="804" height="643" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="abrindo0002" x="3321" y="1929" width="808" height="642" frameX="-101" frameY="-5" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="abrindo0003" x="804" y="3217" width="804" height="643" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoA0000" x="1664" y="0" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoA0001" x="830" y="643" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoA0002" x="830" y="1286" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoA0003" x="834" y="0" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoA0004" x="1660" y="1286" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoB0000" x="0" y="1286" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoB0001" x="1664" y="643" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoB0002" x="2494" y="0" width="827" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoB0003" x="2451" y="2573" width="814" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="botaoB0004" x="1636" y="1929" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="colocandoA0000" x="4134" y="1287" width="792" height="644" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="colocandoA0001" x="4134" y="1931" width="792" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="colocandoB0000" x="3321" y="1286" width="807" height="643" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="colocandoB0001" x="804" y="3217" width="804" height="643" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0000" x="4134" y="644" width="800" height="643" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0001" x="3321" y="643" width="812" height="643" frameX="-92" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0002" x="3321" y="2571" width="806" height="643" frameX="-99" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0003" x="3321" y="0" width="813" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0004" x="0" y="1929" width="819" height="644" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0005" x="0" y="0" width="834" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="fechando0006" x="0" y="643" width="830" height="643" frameX="-101" frameY="-4" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="idle0000" x="4134" y="0" width="801" height="644" frameX="-101" frameY="-3" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="olhando0000" x="1634" y="2573" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="olhando0001" x="2453" y="1929" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="olhando0002" x="0" y="2573" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="olhando0003" x="817" y="2573" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="olhando0004" x="819" y="1929" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="ombroA0000" x="1608" y="3217" width="817" height="631" frameX="-101" frameY="-15" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="ombroA0001" x="2494" y="1289" width="817" height="633" frameX="-101" frameY="-13" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="ombroB0000" x="2494" y="643" width="817" height="646" frameX="-101" frameY="0" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="ombroB0001" x="819" y="1929" width="817" height="644" frameX="-101" frameY="-2" frameWidth="1280" frameHeight="720"/>
+</TextureAtlas>

@@ -1,0 +1,47 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 16,
+			"anim": "idle",
+			"loop": false,
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 16,
+			"anim": "toma",
+			"loop": false,
+			"name": "bump"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "Caixa de Som",
+	"position": [
+		-170,
+		200
+	],
+	"healthicon": "caixadesom",
+	"flip_x": false,
+	"healthbar_colors": [
+		81,
+		81,
+		126
+	],
+	"camera_position": [
+		-130,
+		90
+	],
+	"sing_duration": 6.1,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

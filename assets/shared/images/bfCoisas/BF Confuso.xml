@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF Confuso.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="451" y="639" width="457" height="627" frameX="-132" frameY="-45" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="idle0001" x="0" y="1278" width="453" height="631" frameX="-135" frameY="-40" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="idle0002" x="1818" y="0" width="451" height="634" frameX="-138" frameY="-37" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="idle0003" x="0" y="639" width="451" height="639" frameX="-139" frameY="-32" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="idle0004" x="1368" y="0" width="450" height="636" frameX="-139" frameY="-35" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0000" x="0" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0001" x="456" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0002" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0003" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0004" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0005" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0006" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0007" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0008" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0009" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0010" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0011" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0012" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0013" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0014" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0015" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0016" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0017" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0018" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0019" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+	<SubTexture name="arremesso0020" x="912" y="0" width="456" height="639" frameX="-112" frameY="-33" frameWidth="700" frameHeight="770"/>
+</TextureAtlas>

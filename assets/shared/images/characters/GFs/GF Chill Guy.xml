@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="GIRLFRIEND.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="446" y="669" width="441" height="661" frameX="-151" frameY="-187" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0001" x="0" y="669" width="446" height="662" frameX="-152" frameY="-186" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0002" x="449" y="0" width="451" height="666" frameX="-148" frameY="-181" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0003" x="0" y="0" width="449" height="669" frameX="-147" frameY="-178" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0004" x="900" y="0" width="448" height="667" frameX="-148" frameY="-180" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

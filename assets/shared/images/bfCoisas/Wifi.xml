@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Wifi.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="bump0000" x="0" y="160" width="179" height="103" frameX="-15" frameY="-45" frameWidth="200" frameHeight="200"/>
+	<SubTexture name="bump0001" x="0" y="0" width="143" height="160" frameX="-32" frameY="-14" frameWidth="200" frameHeight="200"/>
+	<SubTexture name="bump0002" x="143" y="0" width="151" height="151" frameX="-29" frameY="-18" frameWidth="200" frameHeight="200"/>
+</TextureAtlas>
