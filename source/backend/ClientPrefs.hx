@@ -127,32 +127,22 @@ import states.TitleState;
 	public var comboStacking:Bool = true;
 	public var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
-		'scrolltype' => 'multiplicative', 
-		// anyone reading this, amod is multiplicative speed mod, cmod is constant speed mod, and xmod is bpm based speed mod.
-		// an amod example would be chartSpeed * multiplier
-		// cmod would just be constantSpeed = chartSpeed
-		// and xmod basically works by basing the speed on the bpm.
-		// iirc (beatsPerSecond * (conductorToNoteDifference / 1000)) * noteSize (110 or something like that depending on it, prolly just use note.height)
-		// bps is calculated by bpm / 60
-		// oh yeah and you'd have to actually convert the difference to seconds which I already do, because this is based on beats and stuff. but it should work
-		// just fine. but I wont implement it because I don't know how you handle sustains and other stuff like that.
-		// oh yeah when you calculate the bps divide it by the songSpeed or rate because it wont scroll correctly when speeds exist.
-		// -kade
+		'scrolltype' => 'multiplicative',
 		'songspeed' => 1.0,
 		'healthgain' => 1.0,
 		'healthloss' => 1.0,
 		'instakill' => false,
 		'practice' => false,
 		'botplay' => false,
-		'opponentdrain' => false, // JS Engine-style: opponent note hits drain player health
+		'opponentdrain' => false,
 		'opponentplay' => false,
-		'perfect' => false, // Perfect Mode - insta-kill on any judgement below Sick
-		'nodroppenalty' => false // Hold drops don't cause misses
+		'perfect' => false,
+		'nodroppenalty' => false
 	];
 
 	public var comboOffset:Array<Int> = [0, 0, 0, 0];
-	public var keyViewerOffset:Array<Int> = [0, 0]; // X, Y offset for key viewer
-	public var keyViewerColor:String = 'Gray'; // Color name for key viewer
+	public var keyViewerOffset:Array<Int> = [0, 0];
+	public var keyViewerColor:String = 'Gray';
 	public var ratingOffset:Int = 0;
 	public var flawlessWindow:Float = 20.0;
 	public var sickWindow:Float = 45.0;
@@ -166,13 +156,21 @@ import states.TitleState;
 	public var dynamicComboDigits:Bool = false;
 	public var newfreeplay:Bool = true;
 	public var resultsStateAtEnd:Bool = true;
-	public var vanillaTransition:Bool = false; // Use vanilla Psych Engine transition instead of custom
-	public var pauseCountdown:Bool = false; // Enable countdown when resuming from pause
-	public var heyIntro:Bool = false; // Boyfriend and Girlfriend do Hey! animation on countdown Go!
-	public var breakTimer:Bool = false; // Show timer when next notes are approaching
-	public var usePsychFreeplay:Bool = true; // Use Psych-style legacy Freeplay instead of PlusEngine Freeplay
-	public var useScriptableCustomStates:Bool = false; // Allow scripted state overrides through ScriptableState and CustomState
-	public var dragCharacterToMove:Bool = false; // Allow to drag position character with cursor like in Codename Engine
+	public var vanillaTransition:Bool = false;
+	public var pauseCountdown:Bool = false;
+	public var heyIntro:Bool = false;
+	public var breakTimer:Bool = false;
+	public var usePsychFreeplay:Bool = true;
+	public var useScriptableCustomStates:Bool = false;
+	public var dragCharacterToMove:Bool = false;
+
+	// === MOD MECHANICS (MNS Charts) ===
+	// HELL = dodge fail = kill + drain forte
+	// AMADOR = dodge fail = metade da vida + drain leve
+	// OFF = nenhuma mecanica de dano/dodge
+	public var mechanicsMode:String = 'HELL';
+	public var distractionMechanics:Bool = true; // false = chart -MechDistr-Off
+	public var mechanicsWarningSeen:Bool = false; // aviso so na 1a vez
 }
 
 class ClientPrefs {
@@ -180,6 +178,11 @@ class ClientPrefs {
 	public static var defaultData:SaveVariables = {};
 	public static var judgementCounter:Bool = false;
 	public static final FRAMERATE_MODES:Array<String> = ['Psych', 'Fixed', 'Interpolated'];
+
+	// Espelho pro Lua (getPropertyFromClass('backend.ClientPrefs', 'mechanicsMode'))
+	public static var mechanicsMode:String = 'HELL';
+	public static var distractionMechanics:Bool = true;
+	public static var mechanicsWarningSeen:Bool = false;
 
 	//Every key has two binds, add your key bind down here and then add your control on options/ControlsSubState.hx and Controls.hx
 	public static var keyBinds:Map<String, Array<FlxKey>> = [
@@ -311,6 +314,20 @@ class ClientPrefs {
 		syncThemeModeFlags();
 		normalizeFPSCounterPrefs();
 
+		// Sync mecanicas do mod (data <- static) antes de salvar
+		// Se a Option alterou data.*, joga pro static tambem
+		if (data.mechanicsMode != null && data.mechanicsMode != '')
+			mechanicsMode = data.mechanicsMode;
+		else
+			data.mechanicsMode = mechanicsMode;
+
+		data.distractionMechanics = distractionMechanics = data.distractionMechanics;
+		data.mechanicsWarningSeen = mechanicsWarningSeen = data.mechanicsWarningSeen;
+
+		// Garante valores validos
+		if (data.mechanicsMode != 'HELL' && data.mechanicsMode != 'AMADOR' && data.mechanicsMode != 'OFF')
+			data.mechanicsMode = mechanicsMode = 'HELL';
+
 		for (key in Reflect.fields(data))
 			Reflect.setField(FlxG.save.data, key, Reflect.field(data, key));
 
@@ -429,6 +446,16 @@ class ClientPrefs {
 			}
 			reloadVolumeKeys();
 		}
+
+		// Sync mecanicas do mod pro static (Lua + Options)
+		if (data.mechanicsMode == null || data.mechanicsMode == '')
+			data.mechanicsMode = 'HELL';
+		if (data.mechanicsMode != 'HELL' && data.mechanicsMode != 'AMADOR' && data.mechanicsMode != 'OFF')
+			data.mechanicsMode = 'HELL';
+
+		mechanicsMode = data.mechanicsMode;
+		distractionMechanics = data.distractionMechanics;
+		mechanicsWarningSeen = data.mechanicsWarningSeen;
 	}
 
 	public static function applyFramePacing():Void

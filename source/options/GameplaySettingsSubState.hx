@@ -7,6 +7,27 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		title = Language.getPhrase('gameplay_menu', 'Gameplay Settings');
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
 
+		// ===== MECÂNICAS DO MOD (AVISO) =====
+		var option:Option = new Option(
+			'Mechanics',
+			'HELL = mecânicas pesadas (dodge = hitkill).\nAMADOR = mais leve (dodge tira metade da vida).\nOFF = nenhuma mecânica de drain/dodge.',
+			'mechanicsMode',
+			STRING,
+			['HELL', 'AMADOR', 'OFF']
+		);
+		option.onChange = onChangeMechanicsMode;
+		addOption(option);
+
+		var optionDistraction:Option = new Option(
+			'Distraction Mechanics',
+			'Se desligado, usa charts sem notas de distração\n(ex: musica-MechDistr-Off.json).',
+			'distractionMechanics',
+			BOOL
+		);
+		optionDistraction.onChange = onChangeDistractionMechanics;
+		addOption(optionDistraction);
+		// ====================================
+
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name
 			'If checked, notes go Down instead of Up, simple enough.', //Description
@@ -190,6 +211,60 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	}
 
 	var daHitSound:FlxSound = new FlxSound();
+
+	// ===== AVISO MECÂNICAS =====
+	function onChangeMechanicsMode()
+	{
+		if (ClientPrefs.data.mechanicsMode == 'OFF' && !ClientPrefs.data.mechanicsWarningSeen)
+		{
+			ClientPrefs.data.mechanicsMode = 'AMADOR';
+
+			openSubState(new MechanicsConfirmSubstate(function(yes:Bool)
+			{
+				if (yes)
+				{
+					ClientPrefs.data.mechanicsMode = 'OFF';
+					ClientPrefs.data.mechanicsWarningSeen = true;
+				}
+				else
+				{
+					ClientPrefs.data.mechanicsMode = 'AMADOR';
+				}
+				ClientPrefs.saveSettings();
+			}));
+		}
+		else
+		{
+			ClientPrefs.saveSettings();
+		}
+	}
+
+	function onChangeDistractionMechanics()
+	{
+		if (!ClientPrefs.data.distractionMechanics && !ClientPrefs.data.mechanicsWarningSeen)
+		{
+			ClientPrefs.data.distractionMechanics = true;
+
+			openSubState(new MechanicsConfirmSubstate(function(yes:Bool)
+			{
+				if (yes)
+				{
+					ClientPrefs.data.distractionMechanics = false;
+					ClientPrefs.data.mechanicsWarningSeen = true;
+				}
+				else
+				{
+					ClientPrefs.data.distractionMechanics = true;
+				}
+				ClientPrefs.saveSettings();
+			}));
+		}
+		else
+		{
+			ClientPrefs.saveSettings();
+		}
+	}
+	// ==========================
 
 	function onChangeHitsound()
 	{
