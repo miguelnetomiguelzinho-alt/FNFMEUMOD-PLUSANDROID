@@ -1,13 +1,28 @@
 package options;
 
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.text.FlxText;
+import flixel.util.FlxColor;
+import flixel.sound.FlxSound;
+
 class GameplaySettingsSubState extends BaseOptionsMenu
 {
+	// ===== overlay do aviso (sem openSubState) =====
+	var warningActive:Bool = false;
+	var pendingType:String = ''; // "mechanics" | "distraction"
+	var warnBg:FlxSprite;
+	var warnBox:FlxSprite;
+	var warnTitle:FlxText;
+	var warnMsg:FlxText;
+	var warnTip:FlxText;
+
 	public function new()
 	{
 		title = Language.getPhrase('gameplay_menu', 'Gameplay Settings');
-		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
+		rpcTitle = 'Gameplay Settings Menu';
 
-		// ===== MECÂNICAS DO MOD (AVISO) =====
+		// ===== MECÂNICAS DO MOD =====
 		var option:Option = new Option(
 			'Mechanics',
 			'HELL = mecânicas pesadas (dodge = hitkill).\nAMADOR = mais leve (dodge tira metade da vida).\nOFF = nenhuma mecânica de drain/dodge.',
@@ -26,13 +41,12 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		);
 		optionDistraction.onChange = onChangeDistractionMechanics;
 		addOption(optionDistraction);
-		// ====================================
+		// ============================
 
-		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
-		var option:Option = new Option('Downscroll', //Name
-			'If checked, notes go Down instead of Up, simple enough.', //Description
-			'downScroll', //Save data variable name
-			BOOL); //Variable type
+		var option:Option = new Option('Downscroll',
+			'If checked, notes go Down instead of Up, simple enough.',
+			'downScroll',
+			BOOL);
 		addOption(option);
 
 		var option:Option = new Option('Middlescroll',
@@ -52,13 +66,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'ghostTapping',
 			BOOL);
 		addOption(option);
-		
+
 		var option:Option = new Option('Bad and Shit Break Combo',
 			"If checked, hitting Bad or Shit notes will break your combo\nand count as Combo Breaks instead of just Misses.",
 			'badShitBreakCombo',
 			BOOL);
 		addOption(option);
-		
+
 		var option:Option = new Option('Auto Pause',
 			"If checked, the game automatically pauses if the screen isn't on focus.",
 			'autoPause',
@@ -95,7 +109,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 		option.onChange = onChangeVibration;
 		#end
-		
+
 		var option:Option = new Option('Sustains as One Note',
 			"If checked, Hold Notes can't be pressed if you miss,\nand count as a single Hit/Miss.\nUncheck this if you prefer the old Input System.",
 			'guitarHeroSustains',
@@ -108,7 +122,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			STRING,
 			['None', 'Keys', 'Notes']);
 		addOption(option);
-		
+
 		var option:Option = new Option('Hitsound Volume',
 			'Funny notes does \"Tick!\" when you hit them.',
 			'hitsoundVolume',
@@ -212,29 +226,126 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 
 	var daHitSound:FlxSound = new FlxSound();
 
-	// ===== AVISO MECÂNICAS =====
+	// ===== AVISO EM OVERLAY (não trava menu) =====
+	function showWarning(type:String)
+	{
+		if (warningActive) return;
+		warningActive = true;
+		pendingType = type;
+
+		warnBg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		warnBg.alpha = 0.75;
+		warnBg.scrollFactor.set();
+		add(warnBg);
+
+		warnBox = new FlxSprite().makeGraphic(700, 320, 0xFF1A1A1A);
+		warnBox.scrollFactor.set();
+		warnBox.screenCenter();
+		add(warnBox);
+
+		warnTitle = new FlxText(0, warnBox.y + 24, 660, "ATENÇÃO!", 36);
+		warnTitle.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.RED, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		warnTitle.borderSize = 2;
+		warnTitle.scrollFactor.set();
+		warnTitle.screenCenter(X);
+		add(warnTitle);
+
+		warnMsg = new FlxText(0, warnTitle.y + 55, 640,
+			"Se você desativar essas opções, você pode perder um pouco de empolgação do Mod.\n\nDeseja realmente desativá-las?",
+			22);
+		warnMsg.setFormat(Paths.font("vcr.ttf"), 22, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		warnMsg.borderSize = 1;
+		warnMsg.scrollFactor.set();
+		warnMsg.screenCenter(X);
+		add(warnMsg);
+
+		warnTip = new FlxText(0, warnBox.y + warnBox.height - 70, 640, "A / SIM   |   B / NÃO", 20);
+		warnTip.setFormat(Paths.font("vcr.ttf"), 20, 0xFFAAAAAA, CENTER);
+		warnTip.scrollFactor.set();
+		warnTip.screenCenter(X);
+		add(warnTip);
+	}
+
+	function hideWarning(yes:Bool)
+	{
+		if (!warningActive) return;
+		warningActive = false;
+
+		if (warnBg != null) { remove(warnBg); warnBg.destroy(); warnBg = null; }
+		if (warnBox != null) { remove(warnBox); warnBox.destroy(); warnBox = null; }
+		if (warnTitle != null) { remove(warnTitle); warnTitle.destroy(); warnTitle = null; }
+		if (warnMsg != null) { remove(warnMsg); warnMsg.destroy(); warnMsg = null; }
+		if (warnTip != null) { remove(warnTip); warnTip.destroy(); warnTip = null; }
+
+		if (pendingType == 'mechanics')
+		{
+			if (yes)
+			{
+				ClientPrefs.data.mechanicsMode = 'OFF';
+				ClientPrefs.mechanicsMode = 'OFF';
+				ClientPrefs.data.mechanicsWarningSeen = true;
+				ClientPrefs.mechanicsWarningSeen = true;
+			}
+			else
+			{
+				ClientPrefs.data.mechanicsMode = 'AMADOR';
+				ClientPrefs.mechanicsMode = 'AMADOR';
+			}
+		}
+		else if (pendingType == 'distraction')
+		{
+			if (yes)
+			{
+				ClientPrefs.data.distractionMechanics = false;
+				ClientPrefs.distractionMechanics = false;
+				ClientPrefs.data.mechanicsWarningSeen = true;
+				ClientPrefs.mechanicsWarningSeen = true;
+			}
+			else
+			{
+				ClientPrefs.data.distractionMechanics = true;
+				ClientPrefs.distractionMechanics = true;
+			}
+		}
+
+		pendingType = '';
+		ClientPrefs.saveSettings();
+		controls.isInSubstate = false;
+	}
+
+	override function update(elapsed:Float)
+	{
+		// enquanto o aviso estiver na tela, só A/B funcionam
+		if (warningActive)
+		{
+			if (controls.ACCEPT || (touchPad != null && touchPad.buttonA != null && touchPad.buttonA.justPressed))
+			{
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				hideWarning(true);
+			}
+			else if (controls.BACK || (touchPad != null && touchPad.buttonB != null && touchPad.buttonB.justPressed))
+			{
+				FlxG.sound.play(Paths.sound('cancelMenu'));
+				hideWarning(false);
+			}
+			return; // NÃO chama super = menu não processa por baixo
+		}
+
+		super.update(elapsed);
+	}
+
 	function onChangeMechanicsMode()
 	{
 		if (ClientPrefs.data.mechanicsMode == 'OFF' && !ClientPrefs.data.mechanicsWarningSeen)
 		{
+			// volta pro valor seguro até confirmar
 			ClientPrefs.data.mechanicsMode = 'AMADOR';
-
-			openSubState(new MechanicsConfirmSubstate(function(yes:Bool)
-			{
-				if (yes)
-				{
-					ClientPrefs.data.mechanicsMode = 'OFF';
-					ClientPrefs.data.mechanicsWarningSeen = true;
-				}
-				else
-				{
-					ClientPrefs.data.mechanicsMode = 'AMADOR';
-				}
-				ClientPrefs.saveSettings();
-			}));
+			ClientPrefs.mechanicsMode = 'AMADOR';
+			showWarning('mechanics');
 		}
 		else
 		{
+			ClientPrefs.mechanicsMode = ClientPrefs.data.mechanicsMode;
 			ClientPrefs.saveSettings();
 		}
 	}
@@ -244,27 +355,15 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		if (!ClientPrefs.data.distractionMechanics && !ClientPrefs.data.mechanicsWarningSeen)
 		{
 			ClientPrefs.data.distractionMechanics = true;
-
-			openSubState(new MechanicsConfirmSubstate(function(yes:Bool)
-			{
-				if (yes)
-				{
-					ClientPrefs.data.distractionMechanics = false;
-					ClientPrefs.data.mechanicsWarningSeen = true;
-				}
-				else
-				{
-					ClientPrefs.data.distractionMechanics = true;
-				}
-				ClientPrefs.saveSettings();
-			}));
+			ClientPrefs.distractionMechanics = true;
+			showWarning('distraction');
 		}
 		else
 		{
+			ClientPrefs.distractionMechanics = ClientPrefs.data.distractionMechanics;
 			ClientPrefs.saveSettings();
 		}
 	}
-	// ==========================
 
 	function onChangeHitsound()
 	{
@@ -301,7 +400,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 
 	function onChangeVibration()
 	{
-		if(ClientPrefs.data.gameOverVibration)
+		if (ClientPrefs.data.gameOverVibration)
 			lime.ui.Haptic.vibrate(0, 500);
 	}
 }
