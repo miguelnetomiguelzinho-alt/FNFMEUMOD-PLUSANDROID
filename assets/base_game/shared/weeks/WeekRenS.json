@@ -1,0 +1,89 @@
+{
+	"songs": [
+		[
+			"Confronting Yourself",
+			"bfmal",
+			[0, 0, 0]
+		],
+		[
+			"Ramen-Noodles",
+			"cbolinha rapper",
+			[0, 175, 0]
+		],
+		[
+			"Titular",
+			"lulamogus",
+			[255, 255, 255]
+		],
+		[
+			"Stoners",
+			"pico chapado",
+			[0, 255, 0]
+		],
+		[
+			"Caixa Estourada",
+			"caixadesom",
+			[64, 64, 64]
+		],
+		[
+			"Placa do Tricky",
+			"placa-tricky",
+			[128, 128, 128]
+		],
+		[
+			"Ventilador vs Travesseiro",
+			"venticow",
+			[73, 73, 108]
+		],
+		[
+			"Sla q bixo vei eh esse",
+			"BVE",
+			[253, 224, 48]
+		],
+		[
+			"gun",
+			"Arma",
+			[0, 0, 0]
+		],
+		[
+			"Blueballed",
+			"Corrompido-bf",
+			[0, 40, 120]
+		],
+		[
+			"BLUE GOLFBALL",
+			"icon-bluegolfball",
+			[0, 255, 255]
+		],
+		[
+		    "Wrong Finger"
+		    "icon-leafy"
+		    [255, 0, 0]
+		],
+		[
+		    "Evaporate"
+		    "mouse-p2"
+		    [0, 255, 255]
+		],
+		[
+		    "Sirokou"
+		    "mouse-p3"
+		    [255, 0, 0]
+		],
+	]
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "scrapped",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "Bruh",
+	"weekName": "Kajotaka",
+	"freeplayColor": [44, 100, 86],
+	"hideStoryMode": true,
+	"weekBefore": "",
+	"startUnlocked": true
+}
